@@ -31,13 +31,24 @@ class MyApp extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    CircleAvatar(
-                      radius: 50.0,
-                      backgroundColor: Colors.white70,
+                    Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                              blurRadius: 20,
+                              color: Colors.white70,
+                              spreadRadius: 7)
+                        ],
+                      ),
                       child: CircleAvatar(
-                        backgroundImage:
-                            AssetImage('assets/images/avatar1.png'),
-                        radius: 40.0,
+                        radius: 50.0,
+                        backgroundColor: Colors.white70,
+                        child: CircleAvatar(
+                          backgroundImage:
+                              AssetImage('assets/images/avatar1.png'),
+                          radius: 40.0,
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -84,18 +95,40 @@ class MyApp extends StatelessWidget {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Icon(
-                          Icons.favorite_outline,
-                          color: Colors.deepPurple,
-                          size: 30.0,
+                        Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                  blurRadius: 40.0,
+                                  color: Colors.purple.shade300,
+                                  spreadRadius: 5)
+                            ],
+                          ),
+                          child: Icon(
+                            Icons.favorite_outline,
+                            color: Colors.deepPurple,
+                            size: 30.0,
+                          ),
                         ),
                         SizedBox(
-                          height: 10.0,
+                          height: 20.0,
                         ),
-                        Icon(
-                          Icons.share_outlined,
-                          color: Colors.red.shade400,
-                          size: 30.0,
+                        Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                  blurRadius: 40.0,
+                                  color: Colors.red.shade300,
+                                  spreadRadius: 5)
+                            ],
+                          ),
+                          child: Icon(
+                            Icons.share_outlined,
+                            color: Colors.red.shade400,
+                            size: 30.0,
+                          ),
                         ),
                       ],
                     )
@@ -111,7 +144,9 @@ class MyApp extends StatelessWidget {
                       color: Colors.white,
                       fontSize: 17.0,
                       letterSpacing: 1.0,
-                      wordSpacing: 1.5),
+                      wordSpacing: 1.5,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.w300),
                 ),
                 SizedBox(
                   height: 20.0,
