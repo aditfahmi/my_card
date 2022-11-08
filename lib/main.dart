@@ -13,38 +13,127 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.black,
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          title: Text('Curiculum Vitae'),
+          titleTextStyle:
+              TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+          actions: [Icon(Icons.email_outlined), Icon(Icons.chat_outlined)],
+        ),
         body: SafeArea(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Container(
-                width: 100.0,
-                height: 100.0,
-                color: Colors.red,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 100.0,
-                    height: 100.0,
-                    color: Colors.yellow,
-                  ),
-                  Container(
-                    width: 100.0,
-                    height: 100.0,
-                    color: Colors.green.shade800,
-                  )
-                ],
-              ),
-              Container(
-                width: 100.0,
-                height: 100.0,
-                color: Colors.blue,
-              ),
-            ],
+          child: Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Row(
+                  children: [
+                    CircleAvatar(
+                      radius: 50.0,
+                      backgroundColor: Colors.white70,
+                      child: CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/images/avatar1.png'),
+                        radius: 40.0,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 20.0,
+                    ),
+                    Column(
+                      children: [
+                        Text(
+                          'Aditya Fahmi Aprianto',
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: 8.0,
+                        ),
+                        Text(
+                          'Mobile Developer ',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                          ),
+                        ),
+                        Text(
+                          '&',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                          ),
+                        ),
+                        Text(
+                          'UI UX Designer',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      width: 20.0,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Icon(
+                          Icons.favorite_outline,
+                          color: Colors.deepPurple,
+                          size: 30.0,
+                        ),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        Icon(
+                          Icons.share_outlined,
+                          color: Colors.red.shade400,
+                          size: 30.0,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Text(
+                  '"Enthusiast young computer geek, frelance designer in love of independence. I have a lot of experience in graphical projects and always give the best of myself to bring you to success."',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 17.0,
+                      letterSpacing: 1.0,
+                      wordSpacing: 1.5),
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'Skills',
+                      style: TextStyle(color: Colors.white, fontSize: 28.0),
+                    ),
+                    SizedBox(
+                      width: 15.0,
+                    ),
+                    Icon(
+                      Icons.arrow_drop_down_circle_outlined,
+                      color: Colors.white,
+                      size: 35.0,
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),
